@@ -25,18 +25,18 @@ const UserPopup = ({ onSubmit, onClose }) => {
 
   return (
     <div className={`fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 transition-opacity duration-300 ${isVisible ? "opacity-100" : "opacity-0"}`}>
-      <div className={`bg-white p-6 rounded-lg shadow-lg w-80 transition-transform duration-300 ${isVisible ? "scale-100" : "scale-90"}`}>
+      <div className={`bg-white p-6 rounded-lg shadow-lg w-96 transition-transform duration-300 ${isVisible ? "scale-100" : "scale-90"}`}>
         
         {/* Close Button */}
-        <button onClick={handleClose} className="absolute top-2 right-3 text-gray-500 hover:text-red-500 text-lg">
+        <button onClick={handleClose} className="absolute top-3 right-4 text-gray-500 hover:text-red-500 text-xl">
           ✖
         </button>
 
-        <h2 className="text-xl font-semibold text-gray-800 text-center mb-4">Tell Us About Yourself</h2>
+        <h2 className="text-xl font-semibold text-gray-800 text-center mb-5">Tell Us About Yourself</h2>
 
         <form onSubmit={handleSubmit} className="space-y-4">
-          <div>
-            <label className="block text-sm text-gray-600">Your Name</label>
+          <div className="flex flex-col space-y-2">
+            <label className="text-sm font-medium text-gray-600">Your Name</label>
             <input
               type="text"
               value={name}
@@ -46,8 +46,8 @@ const UserPopup = ({ onSubmit, onClose }) => {
             />
           </div>
 
-          <div>
-            <label className="block text-sm text-gray-600">Conversation Topic</label>
+          <div className="flex flex-col space-y-2">
+            <label className="text-sm font-medium text-gray-600">Conversation Topic</label>
             <input
               type="text"
               value={topic}
@@ -57,12 +57,14 @@ const UserPopup = ({ onSubmit, onClose }) => {
             />
           </div>
 
-          <button
-            type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300"
-          >
-            Start Chat
-          </button>
+          <div className="mt-4">
+            <button
+              type="submit"
+              className="w-full bg-blue-600 text-white py-2 rounded-md hover:bg-blue-700 transition duration-300"
+            >
+              Start Chat
+            </button>
+          </div>
         </form>
       </div>
     </div>
