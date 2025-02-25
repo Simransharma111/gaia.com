@@ -8,7 +8,7 @@ body {
   background: linear-gradient(to right, #9ca8be, #2a5298);
   background-size: 200% 200%;
   animation: gradientAnimation 10s ease infinite;
-  color:#fff;
+  color: #fff;
   justify-content: center;
 }
 
@@ -98,4 +98,158 @@ button:active {
   border-radius: 8px;
   margin-top: 15px;
   font-size: 14px;
+}
+
+/* ========================== */
+/*        POPUP PAGE         */
+/* ========================== */
+
+/* Overlay */
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(5px);
+  transition: opacity 0.3s ease-in-out;
+}
+
+/* Popup Container */
+.popup-container {
+  background: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.2);
+  width: 400px;
+  text-align: center;
+  transform: scale(0.9);
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.popup-container.show {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* Close Button */
+.close-button {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  font-size: 18px;
+  cursor: pointer;
+  color: #555;
+  transition: transform 0.3s ease-in-out;
+}
+
+.close-button:hover {
+  color: red;
+  transform: rotate(90deg);
+}
+
+/* Heading */
+.popup-title {
+  font-size: 22px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Form Styling */
+.form-group {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  font-size: 14px;
+  font-weight: 500;
+  color: #555;
+  margin-bottom: 5px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 14px;
+  transition: border 0.3s ease-in-out;
+}
+
+.form-group input:focus {
+  border-color: #007bff;
+  outline: none;
+  box-shadow: 0px 0px 8px rgba(0, 123, 255, 0.2);
+}
+
+/* Submit Button */
+.submit-button {
+  width: 100%;
+  background: #007bff;
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease-in-out;
+}
+
+.submit-button:hover {
+  background: #0056b3;
+}
+
+/* ========================== */
+/*       RESPONSIVENESS       */
+/* ========================== */
+@media (max-width: 768px) {
+  .popup-container {
+    width: 90%;
+    padding: 1.5rem;
+  }
+
+  .ai-chat-container {
+    padding: 15px;
+  }
+
+  button {
+    padding: 10px 25px;
+    font-size: 14px;
+    margin: 10px;
+  }
+
+  .card {
+    padding: 10px 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .popup-container {
+    width: 95%;
+    padding: 1.2rem;
+  }
+
+  .popup-title {
+    font-size: 20px;
+  }
+
+  .form-group label {
+    font-size: 13px;
+  }
+
+  .form-group input {
+    font-size: 12px;
+    padding: 8px;
+  }
+
+  .submit-button {
+    font-size: 14px;
+    padding: 10px;
+  }
 }
