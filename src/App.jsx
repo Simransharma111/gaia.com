@@ -18,15 +18,19 @@ const App = () => {
     try {
       await axios.post("https://gaiabackend.onrender.com/api/users", userData);
       localStorage.setItem("userData", JSON.stringify(userData));
-      setShowPopup(false);
     } catch (error) {
       console.error("Error saving user:", error);
     }
+    setShowPopup(false); // Move to AIChat whether request succeeds or fails
+  };
+
+  const handlePopupClose = () => {
+    setShowPopup(false); // Even if the user just closes, move to AIChat
   };
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center bg-gray-100">
-      {showPopup && <UserPopup onSubmit={handleUserSubmit} />}
+      {showPopup && <UserPopup onSubmit={handleUserSubmit} onClose={handlePopupClose} />}
       
       {!showPopup && (
         <div className="w-full max-w-4xl p-6 bg-white shadow-lg rounded-lg text-center">
