@@ -1,10 +1,14 @@
+import { defineConfig } from 'vite'; // ✅ Import defineConfig
+import react from '@vitejs/plugin-react';
+
 export default defineConfig({
+  plugins: [react()],
   server: {
-    host: true, // This makes the app accessible externally
+    host: true, // ✅ Allows external access
     port: 5173,
     strictPort: true,
     preview: {
-      allowedHosts: ["https://gaia-com.onrender.com/"] // Add your Render domain here
+      allowedHosts: ["gaia-com.onrender.com"] // ✅ Add your Render domain
     }
   }
 });
