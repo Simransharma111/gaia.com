@@ -1,0 +1,101 @@
+/* Add these styles to your CSS file */
+
+/* Overall page background gradient */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to right, #9ca8be, #2a5298);
+  background-size: 200% 200%;
+  animation: gradientAnimation 10s ease infinite;
+  color:#fff;
+  justify-content: center;
+}
+
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Make sure the chat container takes up full screen */
+.ai-chat-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
+  padding: 20px;
+  color: white;
+  position: relative;
+  z-index: 1;
+}
+
+/* Add some light animations for smooth entry */
+.moving-elements {
+  animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* Button styles */
+button {
+  border: none;
+  outline: none;
+  padding: 12px 30px;
+  font-size: 16px;
+  margin: 15px;
+  background-color: #fff;
+  color: #2a5298;
+  border-radius: 30px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: #2a5298;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+/* Custom Card styles */
+.card {
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 15px 25px;
+  border-radius: 12px;
+  margin-top: 10px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card p {
+  font-size: 16px;
+}
+
+/* For tag container */
+.tags {
+  background-color: rgba(0, 128, 255, 0.6);
+  padding: 10px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 14px;
+}
