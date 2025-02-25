@@ -16,7 +16,7 @@ const App = () => {
 
   const handleUserSubmit = async (userData) => {
     try {
-      await axios.post("http://localhost:5000/api/users", userData);
+      await axios.post("https://gaiabackend.onrender.com/api/users", userData);
       localStorage.setItem("userData", JSON.stringify(userData));
       setShowPopup(false);
     } catch (error) {
