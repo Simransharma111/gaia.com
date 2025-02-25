@@ -3,12 +3,12 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "vite build",
-    "lint": "eslint .",
-    "preview": "vite preview"
-  },
+"scripts": {
+  "dev": "vite",
+  "build": "vite build",
+  "start": "vite preview --port $PORT --host"
+}
+
   "dependencies": {
     "@radix-ui/react-slot": "1.1.2",
     "@tailwindcss/forms": "0.5.10",
