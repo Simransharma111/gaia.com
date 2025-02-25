@@ -15,12 +15,14 @@ const UserPopup = ({ onSubmit, onClose }) => {
       alert("Please enter both name and topic.");
       return;
     }
-    onSubmit({ name, topic });
+    onSubmit({ name, topic }); // Submits and moves to AIChat
   };
 
   const handleClose = () => {
     setIsVisible(false);
-    setTimeout(onClose, 300);
+    setTimeout(() => {
+      onClose(); // Closes and moves to AIChat
+    }, 300);
   };
 
   return (
