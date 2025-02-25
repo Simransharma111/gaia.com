@@ -65,7 +65,7 @@ const AIChat = () => {
     if (!userData) {
       response = "I couldn't find your details. Please provide your name and topic first.";
     } else {
-      const res = await fetch("http://localhost:5000/api/connect", {
+      const res = await fetch("https://gaiabackend.onrender.com/api/connect", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
